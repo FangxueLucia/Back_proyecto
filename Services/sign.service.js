@@ -39,7 +39,7 @@ export async function loginService(username, password) {
   };
 }
 
-export async function registerService(username, password) {
+export async function registerService(name, email, username, password) {
   const user = await userModel.findOne({ username });
   if (user) {
     return {
@@ -52,6 +52,8 @@ export async function registerService(username, password) {
   console.log(hashedPassword);
   console.log(password);
   const newUser = await userModel.create({
+    name,
+    email,
     username,
     password: hashedPassword,
   });
