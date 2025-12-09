@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
   res.send("Wiwiwiwiwiii");
 });
 
-app.use("/api/auth", Router);
+app.use("/api", Router);
 app.use("/api/protected", authMiddleware, verifyRouter);
 
 app.listen(3000, () => {
