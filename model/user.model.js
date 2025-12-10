@@ -5,6 +5,13 @@ const userSchema = new db.Schema({
   email: { type: String },
   username: { type: String, unique: true, required: true },
   password: String,
+
+  
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user"
+  }
 });
 
 const userModel = db.model("User", userSchema);
