@@ -50,7 +50,7 @@ export async function registerService(name, email, username, password) {
   const saltRounds = 10;
   const hashedPassword = await bcrypt.hash(password.toString(), saltRounds);
   console.log(hashedPassword);
-  console.log(password);
+  console.log(password, hashedPassword); //eliminar después el hashedPassword
   const newUser = await userModel.create({
     name,
     email,
