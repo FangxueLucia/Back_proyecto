@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 
 export async function loginService(username, password) {
   const user = await userModel.findOne({ username });
-  console.log(user);
+  console.log("user", user);
 
   if (!user) {
     return {
