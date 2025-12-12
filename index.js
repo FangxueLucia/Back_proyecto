@@ -1,22 +1,28 @@
+import dotenv from "dotenv";
 import express from "express";
-import Router from "./routes/sign.routes.js";
-import verifyRouter from "./routes/verify.route.js";
-import { authMiddleware } from "./middleware/auth.middleware.js";
-import cors from "cors";
+import mongoose from "mongoose";
+
+dotenv.config();
 
 const app = express();
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("Wiwiwiwiwiii");
-});
+// =================== DB ===================
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("🔥 Conectado a MongoDB"))
+  .catch((err) => console.error("❌ Error conectando a MongoDB:", err));
 
-app.use("/api", Router);
-app.use("/api/protected", authMiddleware, verifyRouter);
+// =================== ROUTES ===================
+import obrasRoutes from "./routes/obrasRoutes.js";
+import signRoutes from "./routes/sign.routes.js";
+import favoritesRoutes from "./routes/favorites.routes.js";
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.use("/api/obras", obrasRoutes);
+app.use("/api/auth", signRoutes);
+app.use("/api", favoritesRoutes);
+
+// =================== START ===================
+app.listen(process.env.PORT, () => {
+  console.log(`🚀 Server running on port ${process.env.PORT}`);
 });

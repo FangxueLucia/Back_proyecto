@@ -1,19 +1,31 @@
-import db from "../config/db.config.js";
+import mongoose from "mongoose";
 
-const userSchema = new db.Schema({
-  name: { type: String },
-  email: { type: String },
-  username: { type: String, unique: true, required: true },
-  password: String,
+const { Schema, model } = mongoose;
 
-  
+const userSchema = new Schema({
+  name: String,
+  email: String,
+
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+
+  password: {
+    type: String,
+    required: true,
+  },
+
   role: {
     type: String,
     enum: ["user", "admin"],
-    default: "user"
-  }
+    default: "user",
+  },
+
+  favorites: [
+    { type: Schema.Types.ObjectId, ref: "Obra" }
+  ],
 });
 
-const userModel = db.model("User", userSchema);
-userModel.init();
-export default userModel;
+export default model("User", userSchema);
