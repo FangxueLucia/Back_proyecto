@@ -21,7 +21,7 @@ async function mountESMRoutes() {
   const signModule = await import("./routes/sign.routes.js");
   app.use("/api/auth", signModule.default);
 
-  // ⚠️ Comentado TEMPORALMENTE hasta que confirmemos que existe y no rompe
+  //  Comentado TEMPORALMENTE hasta que confirmem que no rompí nada 
   // const favModule = await import("./routes/favorites.routes.js");
   // app.use("/api", favModule.default);
 
