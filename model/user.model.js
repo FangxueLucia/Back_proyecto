@@ -2,30 +2,19 @@ import mongoose from "mongoose";
 
 const { Schema, model } = mongoose;
 
-const userSchema = new Schema({
-  name: String,
-  email: String,
-
-  username: {
-    type: String,
-    unique: true,
-    required: true,
-  },
-
-  password: {
-    type: String,
-    required: true,
-  },
+const userSchema = new db.Schema({
+  name: { type: String },
+  email: { type: String },
+  username: { type: String, unique: true, required: true },
+  password: String,
 
   role: {
     type: String,
     enum: ["user", "admin"],
     default: "user",
   },
-
-  favorites: [
-    { type: Schema.Types.ObjectId, ref: "Obra" }
-  ],
 });
 
-export default model("User", userSchema);
+const userModel = db.model("User", userSchema);
+userModel.init();
+export default userModel;
