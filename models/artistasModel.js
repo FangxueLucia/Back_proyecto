@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 // Importa Mongoose, que sirve para trabajar con MongoDB usando modelos y esquemas
 
 const { Schema, model } = mongoose;
@@ -23,6 +23,9 @@ biografia: String
 // "biografia" es un texto opcional con información del artista
 
 });
+// Creamos el modelo "Artista" a partir del esquema definido arriba
+
+const Artista = model("Artista", artistaSchema);
 
 // Exporta el modelo "Artista", que usaremos para crear, leer y modificar artistas en MongoDB
-module.exports = model('Artista', artistaSchema);
+export default Artista;
