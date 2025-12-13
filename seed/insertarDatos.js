@@ -14,42 +14,41 @@ dotenv.config(); // Carga las variables del archivo .env en process.env
 
 //Artistas------
 const nombresArtistas = [
-"Anónimo / artistas Paleolíticos",
-"Anónimo (taller funerario del Antiguo Egipto)",
-"Agesandro, Polidoro y Atenodoro (escuela helenística)",
-"Anónimo (mosaísta bizantino)",
-"Anónimo / escuela gótica medieval",
-"Miguel Ángel",
-"Diego Velázquez",
-"Francisco de Goya",
-"Eugène Delacroix",
-"Claude Monet",
-"Édouard Manet",
-"Vincent van Gogh",
-"Edvard Munch",
-"Pablo Picasso",
-"Marcel Duchamp",
-"Salvador Dalí",
-"Jackson Pollock",
-"Andy Warhol",
-"Joseph Kosuth",
-"Cindy Sherman",
-"Judy Chicago",
-"Nam June Paik",
-"Jean-Michel Basquiat",
-"Damien Hirst",
-"Richard Serra",
-"Banksy",
-"Ai Weiwei",
-"Refik Anadol"
+  "Anónimo / artistas Paleolíticos",
+  "Anónimo (taller funerario del Antiguo Egipto)",
+  "Agesandro, Polidoro y Atenodoro (escuela helenística)",
+  "Anónimo (mosaísta bizantino)",
+  "Anónimo / escuela gótica medieval",
+  "Miguel Ángel",
+  "Diego Velázquez",
+  "Francisco de Goya",
+  "Eugène Delacroix",
+  "Claude Monet",
+  "Édouard Manet",
+  "Vincent van Gogh",
+  "Edvard Munch",
+  "Pablo Picasso",
+  "Marcel Duchamp",
+  "Salvador Dalí",
+  "Jackson Pollock",
+  "Andy Warhol",
+  "Joseph Kosuth",
+  "Cindy Sherman",
+  "Judy Chicago",
+  "Nam June Paik",
+  "Jean-Michel Basquiat",
+  "Damien Hirst",
+  "Richard Serra",
+  "Banksy",
+  "Ai Weiwei",
+  "Refik Anadol"
 ];
 
-
-//Obras--------
+// Obras--------
 const obras1 = [
   { tittle: "Pinturas rupestres de la Cueva de Altamira", artist: "Anónimo / artistas Paleolíticos", year: -15000, type: "Pintura rupestre", image:"/ImagenesDeObras/altamira.jpg" },
   { tittle: "Máscara funeraria de Tutankamon", artist: "Anónimo (taller funerario del Antiguo Egipto)", year: -1323, type: "Objeto funerario / Máscara", image: "/ImagenesDeObras/MascaraTutan-Kamon.jpg" },
-  { tittle: "Laocoonte y sus hijos", artist: "Atribuida a Agesandro, Polidoro y Atenodoro (escuela helenística)", year: -40, type: "Escultura", image: "/ImagenesDeObras/Laocoonte.jpg" },
+  { tittle: "Laocoonte y sus hijos", artist: "Agesandro, Polidoro y Atenodoro (escuela helenística)", year: -40, type: "Escultura", image: "/ImagenesDeObras/Laocoonte.jpg" },
   { tittle: "Mosaico del Emperador Justiniano y su séquito (San Vital, Rávena)", artist: "Anónimo (mosaísta bizantino)", year: 547, type: "Mosaico", image: "/ImagenesDeObras/MosaicoJustiniano.jpg" },
   { tittle: "La Piedad de Villeneuve-les-Avignon", artist: "Anónimo / escuela gótica medieval", year: 1360, type: "Escultura / Pintura gótica", image: "/ImagenesDeObras/LaPiedad.jpg" },
   { tittle: "David", artist: "Miguel Ángel", year: 1504, type: "Escultura", image: "/ImagenesDeObras/David.jpg" },
@@ -58,6 +57,7 @@ const obras1 = [
   { tittle: "El 3 de Mayo en Madrid (Los fusilamientos)", artist: "Francisco de Goya", year: 1814, type: "Pintura", image: "/ImagenesDeObras/Fusilamiento.jpg" },
   { tittle: "La Libertad guiando al pueblo", artist: "Eugène Delacroix", year: 1830, type: "Pintura", image: "/ImagenesDeObras/LibertadGuiandoAlPueblo.jpg" }
 ];
+
 const obras2 = [
   { tittle: "Impresión, sol naciente", artist: "Claude Monet", year: 1872, type: "Pintura", image: "/ImagenesDeObras/ImpresionSolNaciente.jpg" },
   { tittle: "Un bar en el Folies-Bergère", artist: "Édouard Manet", year: 1882, type: "Pintura", image: "/ImagenesDeObras/UnBarEnElFolies-Bergere.jpg" },
@@ -70,6 +70,7 @@ const obras2 = [
   { tittle: "Number 5, 1948", artist: "Jackson Pollock", year: 1948, type: "Pintura / Expresionismo abstracto", image: "/ImagenesDeObras/Number5.jpg" },
   { tittle: "Latas de sopa Campbell", artist: "Andy Warhol", year: 1962, type: "Pintura / Arte pop", image: "/ImagenesDeObras/LatasDeSopaCampbell.jpg" }
 ];
+
 const obras3 = [
   { tittle: "Una y Tres Sillas", artist: "Joseph Kosuth", year: 1965, type: "Instalación / Arte conceptual", image: "/ImagenesDeObras/UnaYTresSillas.jpg" },
   { tittle: "Untitled Film Stills (Series)", artist: "Cindy Sherman", year: 1977, type: "Fotografía", image: "/ImagenesDeObras/CindySherman.jpg" },
@@ -78,7 +79,7 @@ const obras3 = [
   { tittle: "Mona Lisa", artist: "Jean-Michel Basquiat", year: 1983, type: "Pintura", image: "/ImagenesDeObras/MonaLisaBasquiat.jpg" },
   { tittle: "Away from the Flock (El cordero imposible)", artist: "Damien Hirst", year: 1994, type: "Escultura / Instalación", image: "/ImagenesDeObras/ElCorderoImposible.jpg" },
   { tittle: "The Matter of Time (Una cuestión de tiempo)", artist: "Richard Serra", year: 2005, type: "Escultura / Instalación", image: "/ImagenesDeObras/TheMatterOfTime.jpg" },
-  { tittle: "Girl with Balloon", artist: "Banksy",year: 2002,type: "Pintura / Arte urbano", image: "/ImagenesDeObras/GirlWithBalloon.jpg" },
+  { tittle: "Girl with Balloon", artist: "Banksy", year: 2002, type: "Pintura / Arte urbano", image: "/ImagenesDeObras/GirlWithBalloon.jpg" },
   { tittle: "Sunflower Seeds (Semillas de girasol)", artist: "Ai Weiwei", year: 2010, type: "Instalación", image: "/ImagenesDeObras/SemillasDeGirasol.jpg" },
   { tittle: "Machine Hallucinations (Series)", artist: "Refik Anadol", year: 2019, type: "Arte digital / Instalación", image: "/ImagenesDeObras/MachineHallucination.jpg" }
 ];
