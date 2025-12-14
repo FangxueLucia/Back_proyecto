@@ -1,9 +1,10 @@
-import db from "mongoose";
+import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-db.connect(process.env.DB)
+mongoose
+  .connect(process.env.DB)
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -11,4 +12,4 @@ db.connect(process.env.DB)
     console.log(err);
   });
 
-export default db;
+export default mongoose;

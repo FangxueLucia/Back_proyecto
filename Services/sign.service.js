@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 
 //Hace posible un inicio de sesión. Comprueba que el usuario exista y que la contraseña sea correcta.
 export async function loginService(username, password) {
-  const user = await userModel.findOne({ username });
+  const user = await userModel.findOne({ username }).select("+password"); // Busca el usuario por el username y selecciona la contraseña
   console.log(user);
 
   if (!user) {
@@ -39,7 +39,7 @@ export async function loginService(username, password) {
   );
 
   console.log("-----------------------------------------");
-  console.log("¡TOKEN JWT GENERADO Y LISTO PARA ENVIARSE!");
+  console.log("¡SE HA GUARDADO EL TOKEN!");
   console.log(`Token: ${token}`);
   console.log("-----------------------------------------");
 
@@ -48,6 +48,7 @@ export async function loginService(username, password) {
     message: {
       token: token,
       role: user.role, // Para el front es util
+      password: user.password,
     },
   };
 }
@@ -177,9 +178,10 @@ export async function resetPasswordService(email, password) {
   console.log(hashedPassword);
   console.log(password);
 
-  const retrievedPassword = await userModel.updateOne({
-    password: hashedPassword,
-  });
+  const retrievedPassword = await userModel.updateOne(
+    { email: email }, //Filtro para buscar el email
+    { $set: { password: hashedPassword } } //Actualiza la contraseña
+  );
   console.log("actualización: ", retrievedPassword);
 
   return {
