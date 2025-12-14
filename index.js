@@ -4,7 +4,6 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 dotenv.config();
-
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:4200" })); // Permite peticiones desde el frontend

@@ -10,6 +10,7 @@ import {
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
+  console.log(req.body);
   const { name, email, username, password } = req.body;
   const result = await registerService(name, email, username, password);
   res.status(result.status).send(result.message);
@@ -30,6 +31,7 @@ router.post("/code-check", async (req, res) => {
 });
 
 router.post("/get-email", async (req, res) => {
+  console.log("hola");
   const { email } = req.body;
   const result = await generateCodeService(email);
   res.status(result.status).send(result.message);
