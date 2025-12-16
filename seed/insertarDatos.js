@@ -58,7 +58,7 @@ const obras1 = [
   { tittle: "La Libertad guiando al pueblo", artist: "Eugène Delacroix", year: 1830, type: "Pintura", image: "/ImagenesDeObras/LibertadGuiandoAlPueblo.jpg" }
 ];
 
-const obras2 = [
+export const obras2 = [
   { tittle: "Impresión, sol naciente", artist: "Claude Monet", year: 1872, type: "Pintura", image: "/ImagenesDeObras/ImpresionSolNaciente.jpg" },
   { tittle: "Un bar en el Folies-Bergère", artist: "Édouard Manet", year: 1882, type: "Pintura", image: "/ImagenesDeObras/UnBarEnElFolies-Bergere.jpg" },
   { tittle: "La noche estrellada", artist: "Vincent van Gogh", year: 1889, type: "Pintura", image: "/ImagenesDeObras/LaNocheEstrellada.jpg" },
@@ -71,7 +71,7 @@ const obras2 = [
   { tittle: "Latas de sopa Campbell", artist: "Andy Warhol", year: 1962, type: "Pintura / Arte pop", image: "/ImagenesDeObras/LatasDeSopaCampbell.jpg" }
 ];
 
-const obras3 = [
+export const obras3 = [
   { tittle: "Una y Tres Sillas", artist: "Joseph Kosuth", year: 1965, type: "Instalación / Arte conceptual", image: "/ImagenesDeObras/UnaYTresSillas.jpg" },
   { tittle: "Untitled Film Stills (Series)", artist: "Cindy Sherman", year: 1977, type: "Fotografía", image: "/ImagenesDeObras/CindySherman.jpg" },
   { tittle: "The Dinner Party", artist: "Judy Chicago", year: 1979, type: "Instalación", image: "/ImagenesDeObras/DinnerParty.jpg" },
@@ -95,7 +95,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 
-async function insertarDatos() {
+export async function insertarDatos() {
   try {
     // Borra datos existentes
     await Artista.deleteMany({});
@@ -138,5 +138,3 @@ async function insertarDatos() {
   }
 }
 
-// Ejecutar
-insertarDatos();

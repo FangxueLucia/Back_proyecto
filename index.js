@@ -2,11 +2,18 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import path  from  "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 app.use(cors({ origin: "http://localhost:4200" })); // Permite peticiones desde el frontend
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // =================== DB ===================
 mongoose
@@ -23,7 +30,9 @@ mongoose
 import obrasRoutes from "./routes/obrasRoutes.js";
 import signRoutes from "./routes/sign.routes.js";
 import favoritesRoutes from "./routes/favorites.routes.js";
+import obras2Routes from "./routes/obras2Routes.js";
 
+app.use("/api/obras2", obras2Routes);
 app.use("/api/obras", obrasRoutes);
 app.use("/api/auth", signRoutes);
 app.use("/api", favoritesRoutes);
