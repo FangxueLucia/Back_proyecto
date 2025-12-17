@@ -7,6 +7,8 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
@@ -31,6 +33,7 @@ import signRoutes from "./routes/sign.routes.js";
 import favoritesRoutes from "./routes/favorites.routes.js";
 import obras1Routes from "./routes/obras1Routes.js";
 import obras2Routes from "./routes/obras2Routes.js";
+import obras3Routes from "./routes/obras3Routes.js";
 
 app.use("/api/obras2", obras2Routes);
 app.use("/api/obras3", obras3Routes);
