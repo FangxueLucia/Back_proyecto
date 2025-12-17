@@ -1,10 +1,18 @@
 import express from "express";
-import { obras3 } from "../seed/insertarDatos.js";
+import Obra from "../models/obrasModel.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({ results: obras3 });
+router.get("/", async (req, res) => {
+  try {
+    const obras = await Obra.find({ categoria: "obras3" })
+      .populate("artista", "nombre");
+
+    res.json({ results: obras });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error al obtener obras" });
+  }
 });
 
 export default router;
