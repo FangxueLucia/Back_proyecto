@@ -45,7 +45,7 @@ const nombresArtistas = [
 ];
 
 // Obras--------
-const obras1 = [
+export const obras1 = [
   { tittle: "Pinturas rupestres de la Cueva de Altamira", artist: "Anónimo / artistas Paleolíticos", year: -15000, type: "Pintura rupestre", image:"/ImagenesDeObras/altamira.jpg", bibliografia:" Las pinturas rupestres de la Cueva de Altamira, ubicadas en Cantabria, España, son un conjunto excepcional de arte prehistórico que data del Paleolítico Superior, aproximadamente entre 36,000 y 13,000 años atrás. Descubiertas en 1879 por Marcelino Sanz de Sautuola y su hija María, estas pinturas representan principalmente bisontes, ciervos, caballos y otros animales, utilizando técnicas avanzadas como el uso del color y el sombreado para crear una sensación de volumen y movimiento. La cueva fue declarada Patrimonio de la Humanidad por la UNESCO en 1985 debido a su importancia histórica y artística. Las pinturas de Altamira ofrecen una visión invaluable de la vida y las creencias de los primeros seres humanos." },
   { tittle: "Máscara funeraria de Tutankamon", artist: "Anónimo (taller funerario del Antiguo Egipto)", year: -1323, type: "Objeto funerario / Máscara", image: "/ImagenesDeObras/MascaraTutan-Kamon.jpg", bibliografia:" La máscara funeraria de Tutankamón es una obra maestra del arte del Antiguo Egipto, creada alrededor del año 1323 a.C. Esta máscara de oro macizo, incrustada con piedras semipreciosas y vidrios de colores, fue descubierta en 1922 por el arqueólogo Howard Carter en la tumba intacta del joven faraón Tutankamón en el Valle de los Reyes. La máscara representa el rostro idealizado del faraón, con detalles meticulosos que incluyen la barba postiza real y el nemes, el tocado tradicional egipcio. Más que un simple objeto funerario, la máscara simboliza la divinidad y el poder del faraón, y su función era proteger al rey en su viaje al más allá. Actualmente, la máscara se exhibe en el Museo Egipcio de El Cairo y es considerada una de las piezas más emblemáticas del arte egipcio antiguo." },
   { tittle: "Laocoonte y sus hijos", artist: "Agesandro, Polidoro y Atenodoro (escuela helenística)", year: -40, type: "Escultura", image: "/ImagenesDeObras/Laocoonte.jpg", bibliografia:" 'Laocoonte y sus hijos' es una escultura monumental del período helenístico, atribuida a los escultores Agesandro, Polidoro y Atenodoro de Rodas. La obra representa la trágica escena del sacerdote troyano Laocoonte y sus dos hijos siendo atacados por serpientes marinas enviadas por los dioses. Esta escultura destaca por su dinamismo, expresividad y detallada anatomía, capturando el momento de máxima tensión y sufrimiento. Descubierta en Roma en 1506, la obra ha sido admirada por su maestría técnica y su capacidad para transmitir emociones intensas. Actualmente, 'Laocoonte y sus hijos' se encuentra en los Museos Vaticanos y es considerada una de las piezas más importantes del arte clásico." },
@@ -76,10 +76,10 @@ export const obras3 = [
   { tittle: "Untitled Film Stills (Series)", artist: "Cindy Sherman", year: 1977, type: "Fotografía", image: "/ImagenesDeObras/CindySherman.jpg", bibliografia:" 'Untitled Film Stills' es una serie de 69 fotografías en blanco."},
   { tittle: "The Dinner Party", artist: "Judy Chicago", year: 1979, type: "Instalación", image: "/ImagenesDeObras/DinnerParty.jpg", bibliografia:" 'The Dinner Party', creada entre 1974 y 1979 por Judy Chicago, es una instalación artística emblemática del feminismo. La obra consiste en una mesa triangular con 39 lugares, cada uno dedicado a una mujer histórica o mitológica significativa. Cada lugar está adornado con vajilla personalizada, incluyendo platos y servilletas que representan la identidad y logros de cada mujer. La instalación celebra la contribución de las mujeres a la historia y la cultura, desafiando la exclusión histórica de las mujeres en el arte y la sociedad. 'The Dinner Party' es considerada una pieza fundamental en el arte feminista y se exhibe permanentemente en el Brooklyn Museum de Nueva York." },
   { tittle: "TV Buddha (Series)", artist: "Nam June Paik", year: 1974, type: "Videoarte / Instalación", image: "/ImagenesDeObras/TVBuddha.jpg", bibliografia:" 'TV Buddha', creada en 1974 por Nam June Paik, es una obra pionera del videoarte que combina tecnología y espiritualidad. La instalación presenta una estatua de Buda frente a un televisor que muestra una transmisión en vivo de la propia estatua. Esta interacción crea un diálogo entre la tradición y la modernidad, cuestionando la relación entre la tecnología, la percepción y la contemplación. Paik utiliza esta obra para explorar temas de auto-reflexión y la influencia de los medios de comunicación en la sociedad contemporánea. 'TV Buddha' es considerada una pieza clave en la historia del arte contemporáneo y el videoarte." },
-  { tittle: "Mona Lisa", artist: "Jean-Michel Basquiat", year: 1983, type: "Pintura", image: "/ImagenesDeObras/MonaLisaBasquiat.jpg", bibliografia:" 'Mona Lisa', pintada en 1983 por Jean-Michel Basquiat, es una reinterpretación contemporánea del icónico retrato renacentista de Leonardo da Vinci. La obra combina elementos del arte callejero y el neoexpresionismo, característicos del estilo de Basquiat, con referencias culturales y simbólicas. En esta versión, Basquiat incorpora su distintivo uso del color, la línea y el texto para desafiar las convenciones artísticas y explorar temas de identidad, poder y cultura. 'Mona Lisa' refleja la fusión de la alta cultura con la cultura popular, y es considerada una pieza significativa en la carrera de Basquiat y en el arte contemporáneo." },
+  { tittle: "Mona Lisa", artist: "Jean-Michel Basquiat", year: 1983, type: "Pintura", image: "/ImagenesDeObras/MonaLisa.jpg", bibliografia:" 'Mona Lisa', pintada en 1983 por Jean-Michel Basquiat, es una reinterpretación contemporánea del icónico retrato renacentista de Leonardo da Vinci. La obra combina elementos del arte callejero y el neoexpresionismo, característicos del estilo de Basquiat, con referencias culturales y simbólicas. En esta versión, Basquiat incorpora su distintivo uso del color, la línea y el texto para desafiar las convenciones artísticas y explorar temas de identidad, poder y cultura. 'Mona Lisa' refleja la fusión de la alta cultura con la cultura popular, y es considerada una pieza significativa en la carrera de Basquiat y en el arte contemporáneo." },
   { tittle: "Away from the Flock (El cordero imposible)", artist: "Damien Hirst", year: 1994, type: "Escultura / Instalación", image: "/ImagenesDeObras/ElCorderoImposible.jpg", bibliografia:" 'Away from the Flock', también conocido como 'El cordero imposible', es una obra creada en 1994 por Damien Hirst. La instalación presenta un cordero disecado suspendido en una vitrina de vidrio llena de formol, desafiando las percepciones tradicionales de la vida y la muerte. Hirst utiliza esta obra para explorar temas de mortalidad, religión y la naturaleza efímera de la existencia. La presentación clínica del animal en formol contrasta con su simbolismo religioso, evocando reflexiones sobre el sacrificio y la redención. 'Away from the Flock' es una pieza emblemática del arte contemporáneo y ha generado debates sobre la ética y la estética en el arte." },
   { tittle: "The Matter of Time (Una cuestión de tiempo)", artist: "Richard Serra", year: 2005, type: "Escultura / Instalación", image: "/ImagenesDeObras/TheMatterOfTime.jpg", bibliografia:" 'The Matter of Time', creada en 2005 por Richard Serra, es una instalación escultórica monumental ubicada en el Museo Guggenheim Bilbao. La obra consiste en una serie de enormes placas de acero curvadas que forman un laberinto por el que los visitantes pueden caminar. A través de su interacción con el espacio y la percepción del tiempo, Serra invita a los espectadores a experimentar la relación entre el cuerpo, el entorno y la materia. La instalación explora temas de peso, equilibrio y movimiento, desafiando las convenciones tradicionales de la escultura. 'The Matter of Time' es considerada una de las obras más importantes de Serra y un hito en el arte contemporáneo." },
-  { tittle: "Girl with Balloon", artist: "Banksy", year: 2002, type: "Pintura / Arte urbano", image: "/ImagenesDeObras/GirlWithBalloon.jpg", bibliografia:" Girl with Balloon (Niña con globo) de Banksy es una icónica obra de arte callejero (stencil) que muestra a una niña extendiendo su mano hacia un globo rojo con forma de corazón que se le escapa, simbolizando la pérdida de la inocencia, la esperanza, el amor y la fragilidad de la vida." },
+  { tittle: "Girl with Balloon", artist: "Banksy", year: 2002, type: "Pintura / Arte urbano", image: "/ImagenesDeObras/GirlWithBallon.jpg", bibliografia:" Girl with Balloon (Niña con globo) de Banksy es una icónica obra de arte callejero (stencil) que muestra a una niña extendiendo su mano hacia un globo rojo con forma de corazón que se le escapa, simbolizando la pérdida de la inocencia, la esperanza, el amor y la fragilidad de la vida." },
   { tittle: "Sunflower Seeds (Semillas de girasol)", artist: "Ai Weiwei", year: 2010, type: "Instalación", image: "/ImagenesDeObras/SemillasDeGirasol.jpg", bibliografia:" 'Sunflower Seeds', creada en 2010 por Ai Weiwei, es una instalación artística que consiste en millones de semillas de girasol de porcelana hechas a mano. La obra fue exhibida en la Tate Modern de Londres y cubría el piso de la sala de Turbina del museo. Cada semilla fue elaborada por artesanos chinos utilizando técnicas tradicionales, lo que refleja la habilidad y el trabajo colectivo. La instalación aborda temas de individualidad, colectividad y la relación entre el individuo y la sociedad, así como las complejidades de la producción en masa y el consumismo. 'Sunflower Seeds' es una pieza significativa en la carrera de Ai Weiwei y en el arte contemporáneo." },
   { tittle: "Machine Hallucinations (Series)", artist: "Refik Anadol", year: 2019, type: "Arte digital / Instalación", image: "/ImagenesDeObras/MachineHallucination.jpg", bibliografia:" 'Machine Hallucinations', creada en 2019 por Refik Anadol, es una serie de instalaciones de arte digital que exploran la intersección entre la inteligencia artificial, el aprendizaje automático y la percepción humana. Utilizando algoritmos avanzados, Anadol transforma grandes conjuntos de datos visuales en experiencias inmersivas y dinámicas que desafían las nociones tradicionales de la realidad y la creatividad. La obra invita a los espectadores a reflexionar sobre el papel de la tecnología en la sociedad contemporánea y cómo ésta puede expandir los límites de la imaginación humana. 'Machine Hallucinations' ha sido exhibida en varios museos y festivales de arte digital alrededor del mundo." }
 ];
@@ -117,16 +117,39 @@ export async function insertarDatos() {
     const todasObras = [...obras1, ...obras2, ...obras3];
 
     // Mapear obras para que coincidan con el esquema
-    const obrasConIds = todasObras.map(o => ({
-      titulo: o.tittle,              // renombrado
-      artista: diccionario[o.artist], // ObjectId del artista
-      anio: o.year,
-      tipo: o.type,
-      precio: o.price || 0,          // si quieres agregar precio, opcional
-      disponible: true,
-      image: o.image,
-      bibliografia: o.bibliografia 
-    }));
+const obrasConIds = [
+  ...obras1.map(o => ({
+    titulo: o.tittle,
+    artista: diccionario[o.artist],
+    anio: o.year,
+    tipo: o.type,
+    categoria: "obras1",
+    disponible: true,
+    image: o.image,
+    bibliografia: o.bibliografia
+  })),
+  ...obras2.map(o => ({
+    titulo: o.tittle,
+    artista: diccionario[o.artist],
+    anio: o.year,
+    tipo: o.type,
+    categoria: "obras2",
+    disponible: true,
+    image: o.image,
+    bibliografia: o.bibliografia
+  })),
+  ...obras3.map(o => ({
+    titulo: o.tittle,
+    artista: diccionario[o.artist],
+    anio: o.year,
+    tipo: o.type,
+    categoria: "obras3",
+    disponible: true,
+    image: o.image,
+    bibliografia: o.bibliografia
+  }))
+];
+
 
     // Inserta todas las obras
     await Obra.insertMany(obrasConIds);
@@ -138,4 +161,11 @@ export async function insertarDatos() {
     process.exit();
   }
 }
+
+
+// 👇 SOLO se ejecuta si lo lanzas con `node`
+if (process.argv[1].includes("insertarDatos.js")) {
+  insertarDatos();
+}
+
 
