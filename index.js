@@ -34,12 +34,14 @@ import favoritesRoutes from "./routes/favorites.routes.js";
 import obras1Routes from "./routes/obras1Routes.js";
 import obras2Routes from "./routes/obras2Routes.js";
 import obras3Routes from "./routes/obras3Routes.js";
+import blogRoutes from "./routes/blog.routes.js";
 app.use("/api/obras1", obras1Routes);
 app.use("/api/obras2", obras2Routes);
 app.use("/api/obras3", obras3Routes);
 app.use("/api/obras", obrasRoutes);
 app.use("/api/auth", signRoutes);
 app.use("/api", favoritesRoutes);
+app.use("/api/auth/blog", blogRoutes);
 
 // =================== START ===================
 // he puesto el app.listen dentro del .then para que ejecute rápido
