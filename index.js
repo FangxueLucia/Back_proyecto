@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 dotenv.config();
 
@@ -11,19 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({ origin: "http://localhost:4200" })); // Permite peticiones desde el frontend
-
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// =================== STATIC FILES ===================
-// Sirve imágenes desde:
-// Back_proyecto/public/ImagenesDeObras
-
-app.use(
-  "/ImagenesDeObras",
-  express.static(path.join(__dirname, "public", "ImagenesDeObras"))
-);
+app.use(express.static(path.join(__dirname, "public")));
 
 // =================== DB ===================
 mongoose
@@ -42,10 +31,7 @@ import signRoutes from "./routes/sign.routes.js";
 import favoritesRoutes from "./routes/favorites.routes.js";
 import obras1Routes from "./routes/obras1Routes.js";
 import obras2Routes from "./routes/obras2Routes.js";
-import obras3Routes from "./routes/obras3Routes.js";
 
-
-app.use("/api/obras1", obras1Routes);
 app.use("/api/obras2", obras2Routes);
 app.use("/api/obras3", obras3Routes);
 app.use("/api/obras", obrasRoutes);
