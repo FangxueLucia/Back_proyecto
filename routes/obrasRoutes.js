@@ -116,10 +116,7 @@ router.get("/", async (req, res) => {
 
     const total = await Obra.countDocuments(filter);
 
-    let query = Obra.find(filter)
-      .populate("artista")
-      .skip(skip)
-      .limit(limitNum);
+    let query = Obra.find(filter).populate("artista").skip(skip).limit(limitNum);
 
     // ----- ORDEN -----
     if (sort) {
@@ -138,6 +135,28 @@ router.get("/", async (req, res) => {
   } catch (err) {
     return res.status(500).json({
       message: "Error al obtener obras",
+      error: err.message,
+    });
+  }
+});
+
+/**
+ * ✅ GET /api/obras/:id
+ * Devuelve el detalle de una obra por su _id (con artista poblado)
+ */
+router.get("/:id", async (req, res) => {
+  try {
+    const obra = await Obra.findById(req.params.id).populate("artista");
+
+    if (!obra) {
+      return res.status(404).json({ message: "Obra no encontrada" });
+    }
+
+    return res.json(obra);
+  } catch (err) {
+    // Si el id no es válido, Mongoose suele tirar CastError
+    return res.status(400).json({
+      message: "ID inválido",
       error: err.message,
     });
   }
