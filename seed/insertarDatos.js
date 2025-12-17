@@ -45,7 +45,7 @@ const nombresArtistas = [
 ];
 
 // Obras--------
-const obras1 = [
+export const obras1 = [
   { tittle: "Pinturas rupestres de la Cueva de Altamira", artist: "Anónimo / artistas Paleolíticos", year: -15000, type: "Pintura rupestre", image:"/ImagenesDeObras/altamira.jpg", bibliografia:" Las pinturas rupestres de la Cueva de Altamira, ubicadas en Cantabria, España, son un conjunto excepcional de arte prehistórico que data del Paleolítico Superior, aproximadamente entre 36,000 y 13,000 años atrás. Descubiertas en 1879 por Marcelino Sanz de Sautuola y su hija María, estas pinturas representan principalmente bisontes, ciervos, caballos y otros animales, utilizando técnicas avanzadas como el uso del color y el sombreado para crear una sensación de volumen y movimiento. La cueva fue declarada Patrimonio de la Humanidad por la UNESCO en 1985 debido a su importancia histórica y artística. Las pinturas de Altamira ofrecen una visión invaluable de la vida y las creencias de los primeros seres humanos." },
   { tittle: "Máscara funeraria de Tutankamon", artist: "Anónimo (taller funerario del Antiguo Egipto)", year: -1323, type: "Objeto funerario / Máscara", image: "/ImagenesDeObras/MascaraTutan-Kamon.jpg", bibliografia:" La máscara funeraria de Tutankamón es una obra maestra del arte del Antiguo Egipto, creada alrededor del año 1323 a.C. Esta máscara de oro macizo, incrustada con piedras semipreciosas y vidrios de colores, fue descubierta en 1922 por el arqueólogo Howard Carter en la tumba intacta del joven faraón Tutankamón en el Valle de los Reyes. La máscara representa el rostro idealizado del faraón, con detalles meticulosos que incluyen la barba postiza real y el nemes, el tocado tradicional egipcio. Más que un simple objeto funerario, la máscara simboliza la divinidad y el poder del faraón, y su función era proteger al rey en su viaje al más allá. Actualmente, la máscara se exhibe en el Museo Egipcio de El Cairo y es considerada una de las piezas más emblemáticas del arte egipcio antiguo." },
   { tittle: "Laocoonte y sus hijos", artist: "Agesandro, Polidoro y Atenodoro (escuela helenística)", year: -40, type: "Escultura", image: "/ImagenesDeObras/Laocoonte.jpg", bibliografia:" 'Laocoonte y sus hijos' es una escultura monumental del período helenístico, atribuida a los escultores Agesandro, Polidoro y Atenodoro de Rodas. La obra representa la trágica escena del sacerdote troyano Laocoonte y sus dos hijos siendo atacados por serpientes marinas enviadas por los dioses. Esta escultura destaca por su dinamismo, expresividad y detallada anatomía, capturando el momento de máxima tensión y sufrimiento. Descubierta en Roma en 1506, la obra ha sido admirada por su maestría técnica y su capacidad para transmitir emociones intensas. Actualmente, 'Laocoonte y sus hijos' se encuentra en los Museos Vaticanos y es considerada una de las piezas más importantes del arte clásico." },
@@ -117,16 +117,39 @@ export async function insertarDatos() {
     const todasObras = [...obras1, ...obras2, ...obras3];
 
     // Mapear obras para que coincidan con el esquema
-    const obrasConIds = todasObras.map(o => ({
-      titulo: o.tittle,              // renombrado
-      artista: diccionario[o.artist], // ObjectId del artista
-      anio: o.year,
-      tipo: o.type,
-      precio: o.price || 0,          // si quieres agregar precio, opcional
-      disponible: true,
-      image: o.image,
-      bibliografia: o.bibliografia 
-    }));
+const obrasConIds = [
+  ...obras1.map(o => ({
+    titulo: o.tittle,
+    artista: diccionario[o.artist],
+    anio: o.year,
+    tipo: o.type,
+    categoria: "obras1",
+    disponible: true,
+    image: o.image,
+    bibliografia: o.bibliografia
+  })),
+  ...obras2.map(o => ({
+    titulo: o.tittle,
+    artista: diccionario[o.artist],
+    anio: o.year,
+    tipo: o.type,
+    categoria: "obras2",
+    disponible: true,
+    image: o.image,
+    bibliografia: o.bibliografia
+  })),
+  ...obras3.map(o => ({
+    titulo: o.tittle,
+    artista: diccionario[o.artist],
+    anio: o.year,
+    tipo: o.type,
+    categoria: "obras3",
+    disponible: true,
+    image: o.image,
+    bibliografia: o.bibliografia
+  }))
+];
+
 
     // Inserta todas las obras
     await Obra.insertMany(obrasConIds);
@@ -138,4 +161,11 @@ export async function insertarDatos() {
     process.exit();
   }
 }
+
+
+// 👇 SOLO se ejecuta si lo lanzas con `node`
+if (process.argv[1].includes("insertarDatos.js")) {
+  insertarDatos();
+}
+
 
