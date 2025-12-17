@@ -1,8 +1,8 @@
 import express from "express";
-import Obra from "../models/obrasModel.js"; 
+import Obra from "../models/obrasModel.js";
 // Modelo principal: de acá salen todas las obras
 
-import Artista from "../models/artistasModel.js"; 
+import Artista from "../models/artistasModel.js";
 // Lo usamos solo cuando queremos filtrar obras por nombre de artista
 
 import { authMiddleware } from "../middleware/auth.middleware.js";
@@ -23,17 +23,17 @@ router.get("/", async (req, res) => {
     const {
       precioMin,
       precioMax,
-      anio,        // año exacto
-      anioMin,     // rango mínimo
-      anioMax,     // rango máximo
+      anio, // año exacto
+      anioMin, // rango mínimo
+      anioMax, // rango máximo
       tipo,
       disponible,
-      artistaId,   // si el front ya tiene el ID
-      artista,     // si el front manda el nombre
-      q,           // búsqueda general
-      page = 1,    // default page
-      limit = 10,  // default limit
-      sort,        // ordenamiento
+      artistaId, // si el front ya tiene el ID
+      artista, // si el front manda el nombre
+      q, // búsqueda general
+      page = 1, // default page
+      limit = 10, // default limit
+      sort, // ordenamiento
     } = req.query;
 
     //  OBJETO FILTRO
@@ -150,9 +150,10 @@ router.get("/", async (req, res) => {
 
 /**
  * POST /api/obras
- * Solo admin – crea una obra nueva
+ * para que los usuarios puedan crear entradas nuevas en el blog
  */
-router.post("/", authMiddleware, isAdminMiddleware, async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
+  // authMiddleware sigue activo para exigir un inicio de sesión
   try {
     const obra = await Obra.create(req.body);
     return res.status(201).json(obra);
