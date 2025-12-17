@@ -34,7 +34,7 @@ import favoritesRoutes from "./routes/favorites.routes.js";
 import obras1Routes from "./routes/obras1Routes.js";
 import obras2Routes from "./routes/obras2Routes.js";
 import obras3Routes from "./routes/obras3Routes.js";
-
+app.use("/api/obras1", obras1Routes);
 app.use("/api/obras2", obras2Routes);
 app.use("/api/obras3", obras3Routes);
 app.use("/api/obras", obrasRoutes);
