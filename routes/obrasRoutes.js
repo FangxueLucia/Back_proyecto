@@ -141,7 +141,7 @@ router.get("/", async (req, res) => {
 });
 
 /**
- * ✅ GET /api/obras/:id
+ * GET /api/obras/:id
  * Devuelve el detalle de una obra por su _id (con artista poblado)
  */
 router.get("/:id", async (req, res) => {
